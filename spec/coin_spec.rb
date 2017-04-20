@@ -12,12 +12,12 @@ describe('Fixnum#coin_combinations') do
     expect(50.coin_combinations()).to(eq("2 Quarters"))
   end
   it("return Quarters and dimes for given Cents") do
-    expect(60.coin_combinations()).to(eq("2 Quarters, 1 Dime"))
+    expect(60.coin_combinations()).to(eq("2 Quarters and 1 Dime"))
   end
   it("return Quarters, dimes and Nickels for given Cents") do
-    expect(65.coin_combinations()).to(eq("2 Quarters, 1 Dime, 1 Nickel"))
+    expect(65.coin_combinations()).to(eq("2 Quarters, 1 Dime and 1 Nickel"))
   end
   it("return Quarters, dimes,nickels and Pennies for given Cents") do
-    expect(67.coin_combinations()).to(eq("2 Quarters, 1 Dime, 1 Nickel, 2 Pennies"))
+    expect(67.coin_combinations()).to(eq("2 Quarters, 1 Dime, 1 Nickel and 2 Pennies"))
   end
 end

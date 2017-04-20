@@ -1,20 +1,15 @@
-require('pry')
 class Fixnum
+# function to convert number to string  and concatenate with coin name
   define_method(:to_coins) do |coin_name|
     cents_string = self.to_s()
     cents_string.concat(coin_name)
   end
+
   define_method(:coin_combinations) do
     coin_name_singular = [" Quarter", " Dime", " Nickel", " Penny"]
     coin_name_plural = [" Quarters", " Dimes", " Nickels", " Pennies"]
     coin_value = [25,10,5,1]
-      result_coin = []
-    # if self == 1
-    #   result_coin = self.to_coins(" Penny")
-    # elsif self < 5
-    #   result_coin = self.to_coins(" Pennies")
-    # end
-
+    result_coin = []
     counter = 0
     reminder = self
     quotient = 0
@@ -31,12 +26,15 @@ class Fixnum
       end
 
       counter = counter + 1
-# binding.pry()
       reminder = reminder_temp
+   end
 
+# add 'and' before last  element
+    if result_coin.length > 1
+      pop_last = result_coin.pop()
+      result_coin.push(result_coin.pop().concat(" and ").concat(pop_last))
     end
     result_coin.join(", ")
   end
-
 
 end
